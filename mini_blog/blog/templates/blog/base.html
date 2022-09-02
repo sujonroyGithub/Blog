@@ -1,0 +1,54 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{% block title %}{% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+        background-color: rgb(28, 25, 25);
+        color: antiquewhite;
+    }
+    .jumbo-color{
+      background-color: aliceblue;
+      color: black;
+    }
+    .form-control{
+      background-color: bisque;
+    }
+  </style>
+  <body>
+    {% include 'blog/navbar.html' %}
+    <div class="container-fluid bg-dark">
+        
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block msg %}
+                {% endblock msg %}
+            </div>
+        </div>
+        <div class="row">
+            {% block side %}
+            {% endblock side %}
+
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+  
+   
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
